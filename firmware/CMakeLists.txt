@@ -1,0 +1,15 @@
+cmake_minimum_required (VERSION 3.1)
+project(infinity-firmware VERSION 2.0 LANGUAGES C ASM)
+
+set(INFINITY_PSP_TAG 0xF0F0F0F0 CACHE STRING "PSP tag to use")
+set(INFINITY_OE_TAG 0x00001E22 CACHE STRING "OE tag to use")
+
+add_subdirectory(compat_interface)
+add_subdirectory(reboot)
+add_subdirectory(infinityboot)
+add_subdirectory(infinityctrl)
+add_subdirectory(rebootex)
+add_subdirectory(mecompat)
+add_subdirectory(procompat)
+add_subdirectory(bootloader)
+add_subdirectory(recovery)

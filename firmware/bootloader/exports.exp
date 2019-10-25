@@ -1,0 +1,35 @@
+# Define the exports for the prx
+PSP_BEGIN_EXPORTS
+
+# These four lines are mandatory (although you can add other functions like module_stop)
+# syslib is a psynonym for the single mandatory export.
+PSP_EXPORT_START(syslib, 0, 0x8000)
+PSP_EXPORT_FUNC_HASH(module_start)
+PSP_EXPORT_VAR_HASH(module_info)
+PSP_EXPORT_END
+
+PSP_EXPORT_START(Kernel_Library, 0x0011, 0x0001)
+PSP_EXPORT_FUNC_NID(kernelLibraryHandlerStub, 0x092968F4)
+PSP_EXPORT_FUNC_NID(kernelLibraryHandlerStub, 0x15B6446B)
+PSP_EXPORT_FUNC_NID(kernelLibraryHandlerStub, 0x1839852A)
+PSP_EXPORT_FUNC_NID(kernelLibraryHandlerStub, 0x1FC64E09)
+PSP_EXPORT_FUNC_NID(kernelLibraryHandlerStub, 0x293B45B8)
+PSP_EXPORT_FUNC_NID(kernelLibraryHandlerStub, 0x37431849)
+PSP_EXPORT_FUNC_NID(kernelLibraryHandlerStub, 0x3AD10D4D)
+PSP_EXPORT_FUNC_NID(kernelLibraryHandlerStub, 0x3B84732D)
+PSP_EXPORT_FUNC_NID(kernelLibraryHandlerStub, 0x47A0B729)
+PSP_EXPORT_FUNC_NID(kernelLibraryHandlerStub, 0x5F10D406)
+PSP_EXPORT_FUNC_NID(interceptMemsetEntry, 0xA089ECA4)
+PSP_EXPORT_FUNC_NID(kernelLibraryHandlerStub, 0xB55249D2)
+PSP_EXPORT_FUNC_NID(kernelLibraryHandlerStub, 0xBEA46419)
+PSP_EXPORT_FUNC_NID(kernelLibraryHandlerStub, 0xC1734599)
+PSP_EXPORT_FUNC_NID(kernelLibraryHandlerStub, 0xD13BDE95)
+PSP_EXPORT_FUNC_NID(kernelLibraryHandlerStub, 0xDC692EE3)
+PSP_EXPORT_FUNC_NID(kernelLibraryHandlerStub, 0xFA835CDE)
+PSP_EXPORT_END
+
+PSP_EXPORT_START(sceGe_lazy, 0x0011, 0x0001)
+PSP_EXPORT_FUNC_NID(kernelLibraryHandlerStub, 0x31129B95)
+PSP_EXPORT_END
+
+PSP_END_EXPORTS

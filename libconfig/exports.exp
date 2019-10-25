@@ -1,0 +1,43 @@
+# Define the exports for the prx
+PSP_BEGIN_EXPORTS
+
+# These four lines are mandatory (although you can add other functions like module_stop)
+# syslib is a psynonym for the single mandatory export.
+PSP_EXPORT_START(syslib, 0, 0x8000)
+PSP_EXPORT_FUNC_NID(module_start,0xD3744BE0)
+PSP_EXPORT_FUNC_HASH(module_stop)
+PSP_EXPORT_FUNC_HASH(module_reboot_before)
+PSP_EXPORT_VAR_HASH(module_info)
+PSP_EXPORT_END
+
+PSP_EXPORT_START(libconfig_kernel, 0, 0x0009)
+PSP_EXPORT_FUNC_HASH(infIsConfigAssigned)
+PSP_EXPORT_FUNC_HASH(infInitConfig)
+PSP_EXPORT_FUNC_HASH(infCreateConfig)
+PSP_EXPORT_FUNC_HASH(infAssignConfig)
+PSP_EXPORT_FUNC_HASH(infChangeConfigLocation)
+PSP_EXPORT_FUNC_HASH(infGetEntryInfo)
+PSP_EXPORT_FUNC_HASH(infGetEntry)
+PSP_EXPORT_FUNC_HASH(infAddEntry)
+PSP_EXPORT_FUNC_HASH(infUpdateEntry)
+PSP_EXPORT_FUNC_HASH(infDeleteEntry)
+PSP_EXPORT_FUNC_HASH(infFlushConfig)
+PSP_EXPORT_FUNC_HASH(infDiscardConfig)
+PSP_EXPORT_END
+
+PSP_EXPORT_START(libconfig_user, 0, 0x4009)
+PSP_EXPORT_FUNC_HASH(infIsConfigAssigned)
+PSP_EXPORT_FUNC_HASH(infInitConfig)
+PSP_EXPORT_FUNC_HASH(infCreateConfig)
+PSP_EXPORT_FUNC_HASH(infAssignConfig)
+PSP_EXPORT_FUNC_HASH(infChangeConfigLocation)
+PSP_EXPORT_FUNC_HASH(infGetEntryInfo)
+PSP_EXPORT_FUNC_HASH(infGetEntry)
+PSP_EXPORT_FUNC_HASH(infAddEntry)
+PSP_EXPORT_FUNC_HASH(infUpdateEntry)
+PSP_EXPORT_FUNC_HASH(infDeleteEntry)
+PSP_EXPORT_FUNC_HASH(infFlushConfig)
+PSP_EXPORT_FUNC_HASH(infDiscardConfig)
+PSP_EXPORT_END
+
+PSP_END_EXPORTS

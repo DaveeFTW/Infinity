@@ -1,0 +1,23 @@
+﻿---
+BasedOnStyle: Mozilla
+AlwaysBreakAfterDefinitionReturnType: None
+AlwaysBreakAfterReturnType: None
+BraceWrapping:                         
+  AfterClass:      true   
+  AfterControlStatement: true
+  AfterEnum:       true
+  AfterFunction:   true          
+  AfterNamespace:  true                
+  AfterStruct:     true
+  AfterUnion:      true
+  BeforeCatch:     true
+  BeforeElse:      true   
+  IndentBraces:    true
+BreakBeforeBraces: Allman
+ColumnLimit: '100'
+ConstructorInitializerIndentWidth: '4'
+ContinuationIndentWidth: '4'
+IndentWidth: '4'
+NamespaceIndentation: All
+AccessModifierOffset: -4
+...
