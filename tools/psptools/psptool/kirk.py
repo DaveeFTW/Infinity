@@ -218,8 +218,10 @@ def kirk1_encrypt_ecdsa(data, salt=b'', key=None):
         key = Random.get_random_bytes(16)
 
     # pad to 16 byte boundary if required
-    padding = padding = b'\x00' * \
-        (0x10-(len(data) % 16)) if len(data) % 16 else b''
+    padding = b''
+    if len(data) % 16:
+    	for i in range(15, len(data) % 16-1, -1):
+    		padding += bytes([i << 4 | i])
 
     # encrypt the data
     aes = AES.new(key, AES.MODE_CBC, iv=b'\x00'*16)
@@ -246,8 +248,10 @@ def kirk1_encrypt_cmac(data, salt=b'', aes_key=None, cmac_key=None):
         cmac_key = Random.get_random_bytes(16)
 
     # pad to 16 byte boundary if required
-    padding = padding = b'\x00' * \
-        (0x10-(len(data) % 16)) if len(data) % 16 else b''
+    padding = b''
+    if len(data) % 16:
+    	for i in range(15, len(data) % 16-1, -1):
+    		padding += bytes([i << 4 | i])
 
     # encrypt the data
     aes = AES.new(aes_key, AES.MODE_CBC, iv=b'\x00'*16)

@@ -128,23 +128,24 @@ def encrypt(prx, meta, id=None):
     id = kirk.kirk7(id, meta['key'])
 
     # create a prx header
-    prx_header = prx_header_2()
-    prx_header.set_elf_info(prx[:0x80])
-    prx_header.set_kirk_block(header)
-    prx_header.set_kirk_metadata(encrypted[0x70:0x80])
-    prx_header.set_btcnf_id(id)
-    prx_header.set_tag(prx[0xD0:0xD4])
+    p = prx_header_2()
+    p.set_elf_info(prx[:0x80])
+    p.set_kirk_block(header)
+    p.set_kirk_metadata(encrypted[0x70:0x80])
+    p.set_btcnf_id(id)
+    p.set_tag(prx[0xD0:0xD4])
 
     # calculate SHA1 of header
     h = SHA1.new()
-    h.update(prx_header.tag())
+    h.update(p.tag())
     h.update(xorbuf[:0x10])
     h.update(b'\x00'*0x58)
-    h.update(prx_header.btcnf_id())
-    h.update(prx_header.kirk_metadata())
-    h.update(prx_header.elf_info())
-    prx_header.set_sha1_hash(h.digest())
+    h.update(p.btcnf_id())
+    h.update(p.kirk_block())
+    h.update(p.kirk_metadata())
+    h.update(p.elf_info())
+    p.set_sha1_hash(h.digest())
 
     # encrypt the header and return the complete PRX
-    prx_header.encrypt_header(meta['key'])
-    return prx_header.prx() + encrypted[0x90+0x80:]
+    p.encrypt_header(meta['key'])
+    return p.prx() + encrypted[0x90+0x80:]

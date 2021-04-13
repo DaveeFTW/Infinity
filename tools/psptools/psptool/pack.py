@@ -250,4 +250,4 @@ def pack_prx(executable, is_pbp, fix_relocs=True, psptag=psptag_default, oetag=o
     psp_header.psptag = psptag(exec_type)
     psp_header.oetag = oetag(exec_type)
 
-    return psp_header.pack() + compressed_exec + padding
+    return psp_header.pack() + compressed_exec
