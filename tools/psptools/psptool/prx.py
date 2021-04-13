@@ -195,7 +195,36 @@ _metatypes = {
     0x4C9414F0: {
         'key': 0x43,
         'seed': '45EF5C5DED81998412948FABE8056D7D',
-        'decrypt': type2.decrypt
+        'decrypt': type2.decrypt,
+        'encrypt': type2.encrypt
+    },
+
+    0x4C9416F0: {
+        'key': 0x43,
+        'seed': 'EB1B530B624932581F830AF4993D75D0',
+        'decrypt': type2.decrypt,
+        'encrypt': type2.encrypt
+    },
+
+    0x4C9417F0: {
+        'key': 0x43,
+        'seed': 'BAE2A31207FF041B64A51185F72F995B',
+        'decrypt': type2.decrypt,
+        'encrypt': type2.encrypt
+    },
+
+    0x4C941FF0: {
+        'key': 0x43,
+        'seed': '2C8EAF1DFF79731AAD96AB09EA35598B',
+        'decrypt': type2.decrypt,
+        'encrypt': type2.encrypt
+    },
+    
+    0x38020AF0: {
+        'key': 0x5A,
+        'seed': 'AB8225D7436F6CC195C5F7F063733FE7',
+        'decrypt': type2.decrypt,
+        'encrypt': type2.encrypt
     }
 }
 
