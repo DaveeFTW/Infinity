@@ -185,6 +185,15 @@ void InstallUpdateScreen::render(void)
                                          "and reflash 6.61 before installing.",
                                          TextRenderer::ALIGN_CENTER);
             break;
+        case InstallUpdate::ERROR_WRITE_ARKCOMPAT:
+            m_latinText->drawVerticalTop(
+                480.f / 2.f, 50.f, "Could not flash arkcompat.bin.", TextRenderer::ALIGN_CENTER);
+            m_latinText->drawVerticalTop(480.f / 2.f,
+                                         80.f,
+                                         "Infinity was not installed on your device.\nPlease exit "
+                                         "and reflash 6.61 before installing.",
+                                         TextRenderer::ALIGN_CENTER);
+            break;
         case InstallUpdate::ERROR_READ_USERSYSTEMLIB:
             m_latinText->drawVerticalTop(480.f / 2.f,
                                          50.f,
