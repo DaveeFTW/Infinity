@@ -1,6 +1,6 @@
 cmake_minimum_required (VERSION 3.1)
 
-project(infinity VERSION 2.0.3)
+project(infinity VERSION 2.0.5)
 
 if (NOT CMAKE_TOOLCHAIN_FILE)
     set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/psp-toolchain.cmake)

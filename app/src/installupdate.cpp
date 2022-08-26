@@ -292,6 +292,12 @@ void InstallUpdate::run(void)
         setState(ERROR_WRITE_PROCOMPAT);
         return;
     }
+    
+    if (!writeVerifyFile(ARKCOMPAT_EXEC_PATH, files::arkcompat::data))
+    {
+        setState(ERROR_WRITE_ARKCOMPAT);
+        return;
+    }
 
     auto bootloader = getBootloader(sceKernelDevkitVersion());
 

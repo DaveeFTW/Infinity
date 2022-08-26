@@ -77,7 +77,7 @@ set (CONFIGURATION_SOURCES
 add_subdirectory(3rdparty/intraFont-G)
 
 add_custom_command(OUTPUT generated_file_data.h generated_file_data.cpp
-    DEPENDS libconfig kernel_helper bootloader660 bootloader661 infinityboot infinityctrl rebootex mecompat procompat
+    DEPENDS libconfig kernel_helper bootloader660 bootloader661 infinityboot infinityctrl rebootex mecompat procompat arkcompat
     COMMAND $<TARGET_PROPERTY:bin2cpp,EXEC>
         libconfig="$<TARGET_FILE:libconfig>"
         kernel_helper="$<TARGET_FILE:kernel_helper>"
@@ -88,6 +88,7 @@ add_custom_command(OUTPUT generated_file_data.h generated_file_data.cpp
         rebootex="$<TARGET_FILE:rebootex>"
         mecompat="$<TARGET_FILE:mecompat>"
         procompat="$<TARGET_FILE:procompat>"
+        arkcompat="$<TARGET_FILE:arkcompat>"
         parallax_left=${CMAKE_CURRENT_SOURCE_DIR}/resources/parallaxleft.tga
         parallax_right=${CMAKE_CURRENT_SOURCE_DIR}/resources/parallaxright.tga
         symbol_font=${CMAKE_CURRENT_SOURCE_DIR}/resources/symbol.pgf
@@ -133,6 +134,7 @@ target_link_libraries(configuration
     rebootex
     mecompat
     procompat
+    arkcompat
 )
 
 target_include_directories(configuration PRIVATE 3rdparty ${CMAKE_CURRENT_BINARY_DIR})
